@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1702142260 source:d:\kuliah\struktur data\tubes\multi\main.cpp
+	<iostream>
+	"Parent-Maskapai.h"
+
+1702142575 d:\kuliah\struktur data\tubes\multi\parent-maskapai.h
+	<iostream>
+
