@@ -27,7 +27,7 @@ struct elmlist_parent {
 struct List_parent {
     adr_parent first;
 };
-
+void apaitu(List_parent &L);
 void createList(List_parent &L);
 void insertFirst(List_parent &L, adr_parent P);
 void insertAfter(List_parent &L, adr_parent Prec, adr_parent P);
