@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Child-Penerbangan.cpp" />
+		<Unit filename="Child-Penerbangan.h" />
 		<Unit filename="Parent-Maskapai.cpp" />
 		<Unit filename="Parent-Maskapai.h" />
 		<Unit filename="main.cpp" />

@@ -6,3 +6,18 @@
 1702142575 d:\kuliah\struktur data\tubes\multi\parent-maskapai.h
 	<iostream>
 
+1702201035 source:d:\kuliah\std\tubes\tubes-std\main.cpp
+	<iostream>
+	"Parent-Maskapai.h"
+
+1702201035 d:\kuliah\std\tubes\tubes-std\parent-maskapai.h
+	<iostream>
+
+1702201035 source:d:\kuliah\std\tubes\tubes-std\parent-maskapai.cpp
+	"Parent-Maskapai.h"
+
+1702202856 source:c:\users\kenzu\desktop\testing.cpp
+	<iostream>
+	<iomanip>
+	<chrono>
+
