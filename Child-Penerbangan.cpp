@@ -5,7 +5,7 @@ void createList(List_child &L){
     L.last = NULL;
 }
 
-adr_child alokasi(infotype X){
+adr_child alokasi(infotype_child X){
     adr_child P = new elmlist_child;
     P->info = X;
     P->next = NULL;
@@ -20,30 +20,44 @@ void insertFirst(List_child &L, adr_child P){
 void insertLast(List_child &L, adr_child P){
     if (L.first == NULL){
         L.first = P;
+        L.last = P;
     } else {
-        adr_child Q = L.first;
-        while (Q->next != NULL){
-            Q = next(Q);
-        }
-        Q -> next = P;
+        L.last -> next = P;
+        L.last = P;
     }
 }
 
 void insertAfter(adr_child Prec, adr_child P){
-    prev(next(Prec)) = P;
-    next(P) = next(Prec);
-    prev(P) = Prec;
-    next(Prec) = P;
+    P->next = Prec->next;
+    Prec->next = P;
 }
 
 void insertAsc(List_child &L, adr_child P){
-
+    system_clock::time_point input_time = system_clock::from_time_t(std::mktime(&P->info.date_time));
+    system_clock::time_point time_first = system_clock::from_time_t(std::mktime(&L.first->info.date_time));
+    system_clock::time_point time_last = system_clock::from_time_t(std::mktime(&L.last->info.date_time));
+    if (L.first == NULL){
+        insertFirst(L,P);
+    } else if (input_time < time_first){
+        insertFirst(L,P);
+    } else if (input_time > time_last){
+        insertLast(L,P);
+    } else {
+        adr_child Q = L.first;
+        while (Q->next != NULL){
+            system_clock::time_point temp_time = system_clock::from_time_t(std::mktime(&P->info.date_time));
+            if (temp_time > input_time){
+                insertAfter(Q,P);
+            }
+            P = next(P);
+        }
+    }
 }
 
 void deleteFirst(List_child &L, adr_child &P);
 void deleteLast(List_child &L, adr_child &P);
 void deleteAfter(adr_child Prec, adr_child &P);
 
-void printInfo(List_child L);
+//void printInfo(List_child L);
 bool TemukanChild(List_child L, string Kode);
 adr_child findchild(List_child L, string Kode);

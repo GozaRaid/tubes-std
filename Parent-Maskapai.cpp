@@ -38,7 +38,7 @@ adr_parent findElm(List_parent L, int ID_Maskapai){
     return P;
 }
 
-bool duplicate(List_parent L, int ID_Maskapai){
+bool duplicateP(List_parent L, int ID_Maskapai){
     adr_parent P = L.first;
     while (P!=NULL){
         if (P->info.Id_Maskapai == ID_Maskapai){
@@ -49,6 +49,7 @@ bool duplicate(List_parent L, int ID_Maskapai){
     return false;
 }
 
-void printInfo(List_parent L,bool kondisi){
+/*void printInfo(List_parent L,bool kondisi){
 
-}
+} */
+//

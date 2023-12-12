@@ -36,6 +36,7 @@
 		<Unit filename="Child-Penerbangan.h" />
 		<Unit filename="Parent-Maskapai.cpp" />
 		<Unit filename="Parent-Maskapai.h" />
+		<Unit filename="RelasiorFitur.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

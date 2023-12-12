@@ -6,18 +6,35 @@
 1702142575 d:\kuliah\struktur data\tubes\multi\parent-maskapai.h
 	<iostream>
 
-1702201035 source:d:\kuliah\std\tubes\tubes-std\main.cpp
+1702404318 source:d:\kuliah\std\tubes\tubes-std\main.cpp
 	<iostream>
+	<iomanip>
+	<chrono>
+	<bits/stdc++.h>
 	"Parent-Maskapai.h"
+	"Child-Penerbangan.h"
+	"RelasiorFitur.h"
 
-1702201035 d:\kuliah\std\tubes\tubes-std\parent-maskapai.h
+1702404708 d:\kuliah\std\tubes\tubes-std\parent-maskapai.h
 	<iostream>
 
-1702201035 source:d:\kuliah\std\tubes\tubes-std\parent-maskapai.cpp
+1702403639 source:d:\kuliah\std\tubes\tubes-std\parent-maskapai.cpp
 	"Parent-Maskapai.h"
 
 1702202856 source:c:\users\kenzu\desktop\testing.cpp
 	<iostream>
 	<iomanip>
 	<chrono>
+
+1702400691 d:\kuliah\std\tubes\tubes-std\child-penerbangan.h
+	<iostream>
+	<chrono>
+	<iomanip>
+
+1702400679 source:d:\kuliah\std\tubes\tubes-std\child-penerbangan.cpp
+	"Child-Penerbangan.h"
+
+1702401736 d:\kuliah\std\tubes\tubes-std\relasiorfitur.h
+	"Parent-Maskapai.h"
+	"Child-Penerbangan.h"
 
