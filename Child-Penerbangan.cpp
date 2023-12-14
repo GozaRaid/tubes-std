@@ -54,9 +54,41 @@ void insertAsc(List_child &L, adr_child P){
     }
 }
 
-void deleteFirst(List_child &L, adr_child &P);
-void deleteLast(List_child &L, adr_child &P);
-void deleteAfter(adr_child Prec, adr_child &P);
+void deleteFirst(List_child &L, adr_child &P){
+    P = L.first;
+    L.first = L.first -> next;
+}
+
+void deleteLast(List_child &L, adr_child &P){
+    P = L.last;
+    adr_child Q = L.first;
+    while (next(next(Q)) != NULL){
+        Q = next(Q);
+    }    
+    L.last = Q;
+    Q->next == NULL;
+}
+
+void deleteAfter(adr_child Prec, adr_child &P){
+    P = Prec->next;
+    Prec->next = P->next;
+}
+
+void deletePenerbaganX(List_child &L, string maskapai){
+    adr_child P;
+    adr_child Q = L.first;
+    while (Q != NULL){
+        if (L.first->info.nama_maskapai == maskapai){
+            deleteFirst(L,P);
+        } else if (L.last->info.nama_maskapai == maskapai){
+            deleteLast(L,P);
+        } else if (Q->next->info.nama_maskapai == maskapai){
+            deleteAfter(Q,P);
+        }
+        Q=next(Q);
+    }
+}
+
 
 //void printInfo(List_child L);
 bool TemukanChild(List_child L, string Kode);

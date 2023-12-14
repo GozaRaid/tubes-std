@@ -1,5 +1,5 @@
-#ifndef CHILD-PENERBANGAN_H_INCLUDED
-#define CHILD-PENERBANGAN_H_INCLUDED
+#ifndef CHILD_PENERBANGAN_H_INCLUDED
+#define CHILD_PENERBANGAN_H_INCLUDED
 #include <iostream>
 #include <chrono>
 #include <iomanip>
@@ -15,6 +15,7 @@ using namespace std::chrono;
 
 
 struct Penerbangan {
+    string nama_maskapai;
     string Kode;
     string Jenis;
     tm date_time;
@@ -44,6 +45,7 @@ void insertAsc(List_child &L, adr_child P);
 void deleteFirst(List_child &L, adr_child &P);
 void deleteLast(List_child &L, adr_child &P);
 void deleteAfter(adr_child Prec, adr_child &P);
+void deletePenerbaganX(List_child &L, string M);
 
 adr_child alokasi(infotype_child X);
 //void printInfo(List_child L);

@@ -21,14 +21,16 @@ int main(){
     do{
         cout << "     Selamat datang di Data Penerbangan TOMAD \n";
         cout << "=====================================================\n";
-        cout << "1.  Menambahkan Maskapai \n";
-        cout << "2.  Menambahkan Penerbangan\n";
-        cout << "3.  Menampilkan data penerbangan dari Maskapai X\n";
-        cout << "4.  Menampilkan nama penumpang dari Penerbangan X\n";
-        cout << "5.  Menampilkan semua data Maskapai \n";
-        cout << "6.  Menampilkan semua data Penerbangan \n";
-        cout << "7.  Menghapus Penerbangan \n";
-        cout << "8.  Memindahkan Jadwal penerbangan";
+        cout << "1.  Menambahkan Maskapai \n"; //1
+        cout << "2.  Menambahkan Penerbangan\n"; //6
+        cout << "3.  Mencari jadwal penerbangan dari Maskapai X\n"; //9
+        cout << "4.  Mencari Data Maskapai X dan Menampilkannya\n"; //4
+        cout << "5.  Menampilkan semua data Maskapai \n"; //2
+        cout << "6.  Menampilkan semua data Penerbangan \n"; //tambahan
+        cout << "7.  Menampilkan jumlah penerbangan berserta Data Penerbangan dari Maskapai X \n"; //8 & 11
+        cout << "8.  Menghapus Penerbangan \n"; //10
+        cout << "9.  Menghapus Maskapai \n"; //3
+        cout << "10. Memindahkan Jadwal penerbangan"; //5
         cout << "\n";
         cout << "0.  Exit\n";
         cout << "=====================================================\n";

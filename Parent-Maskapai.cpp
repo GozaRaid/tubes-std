@@ -23,8 +23,13 @@ void insertLast(List_parent &L, adr_parent P){
     }
 }
 
-//void deleteFirst(List_parent &L, adr_parent &P);
-//void deleteLast(List_parent &L, adr_parent &P);
+void deleteFirst(List_parent &L, adr_parent &P){
+    P = L.first;
+    L.first = L.first->next;
+}
+void deleteLast(List_parent &L, adr_parent &P){
+    
+}
 //void deleteAfter(List_parent &L, adr_parent Prec, adr_parent &P)
 
 adr_parent findElm(List_parent L, int ID_Maskapai){
