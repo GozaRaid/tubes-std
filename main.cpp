@@ -94,7 +94,7 @@ int main(){
                     if (cariMask != NULL){
                         cout << "Masukkan Jenis Flight: ";
                         getline(cin,datapenerbangan.Jenis);
-                        cout << "Masukkan Waktu dan Tanggal (Format = YYYY-MM-DD HH:MM): ";
+                        cout << "Masukkan Waktu dan Tanggal (YYYY-MM-DD HH:MM): ";
                         cin >> get_time(&datapenerbangan.date_time, "%Y-%m-%d %H:%M");
                         cout << "Masukkan Asal Penerbangan: ";
                         getline(cin,datapenerbangan.Asal);
@@ -147,7 +147,7 @@ int main(){
                 getline(cin,namamaskapai);
                 cariMask = findElm(data_maskapai,namamaskapai);
                 if (cariMask != NULL){
-                    cout << "Masukkan Waktu dan Tanggal (Format = YYYY-MM-DD HH:MM): ";
+                    cout << "Masukkan Waktu dan Tanggal (YYYY-MM-DD HH:MM): ";
                     cin >> get_time(&subpenerbangan.date_time, "%Y-%m-%d %H:%M");
                     cout << "Masukkan Asal Penerbangan: ";
                     getline(cin,subpenerbangan.Asal);
@@ -236,7 +236,7 @@ int main(){
                 cout << "Masukkan Jenis Penerbangan yang mau dihapus: ";
                 getline(cin,subpenerbangan.Jenis);
                 getline(cin,subpenerbangan.Jenis);
-                cout << "Masukkan Waktu dan Tanggal (Format = YYYY-MM-DD HH:MM): ";
+                cout << "Masukkan Waktu dan Tanggal (YYYY-MM-DD HH:MM): ";
                 cin >> get_time(&subpenerbangan.date_time, "%Y-%m-%d %H:%M");
                 cout << "Asal Penerbangan: ";
                 getline(cin, subpenerbangan.Asal);
@@ -269,7 +269,40 @@ int main(){
             }
             break;
             case '9':{
-
+                cout << "\033[2J\033[1;1H";
+                cout << "============= Pemindahan Jadwal Penerbangan =============" << endl;
+                cout << endl;
+                cout << "Menginput data penerbangan yang mau pindah" << endl;
+                infotype_child subpenerbangan;
+                cout << "Masukkan Jenis Penerbangan yang mau dipindah: ";
+                getline(cin,subpenerbangan.Jenis);
+                getline(cin,subpenerbangan.Jenis);
+                cout << "Masukkan Waktu dan Tanggal (YYYY-MM-DD HH:MM): ";
+                cin >> get_time(&subpenerbangan.date_time, "%Y-%m-%d %H:%M");
+                cout << "Asal Penerbangan: ";
+                getline(cin, subpenerbangan.Asal);
+                getline(cin,subpenerbangan.Asal);
+                cout << "Masukkan Tujuan Penerbangan: ";
+                getline(cin,subpenerbangan.Tujuan);
+                adr_child P = NULL;
+                deletePenerbaganX(data_penerbangan,subpenerbangan.Jenis,subpenerbangan.date_time,subpenerbangan.Asal,subpenerbangan.Tujuan,P);
+                if (P != NULL){
+                    cout << endl;
+                    cout << "Masukkan Perubahan Waktu dan Tanggal (YYYY-MM-DD HH:MM):";
+                    cin >> get_time(&P->info.date_time, "%Y-%m-%d %H:%M");
+                    insertAsc(data_penerbangan,P);
+                    cout << "Pemindahan jawdal berhasil" << endl;
+                } else {
+                    cout << "Jadwal yang ingin dirubah tidak ditemukan" << endl;
+                }
+                cout << endl;
+                cout << "Back to main menu? [Y/N]: ";
+                cin >> selection;
+                if (selection == 'Y'){
+                    cout << "\033[2J\033[1;1H";
+                } else {
+                    selection = 0;
+                }
             }
             break;
             case '0':{
