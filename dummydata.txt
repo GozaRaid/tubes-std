@@ -1,0 +1,134 @@
+1
+111
+Garuda Indonesia
+Jl. Sudirman No. 123
+12345678
+Y
+1
+112
+Lion Air
+Jl. Gatot Subroto No. 45
+87654321
+Y
+1
+113
+AirAsia
+Jl. Thamrin No. 67
+23456789
+Y
+1
+114
+Batik Air
+Jl. Kuningan No. 89
+98765432
+Y
+1
+115
+Citilink
+Jl. Hayam Wuruk No. 12
+34567890
+Y
+2
+232401
+Garuda Indonesia
+GA01
+2023-01-15 08:30
+Jakarta
+Bali
+John Jane Doe Bob Smith Alice Johnson -
+Y
+2
+222501
+Lion Air
+JT02
+2023-02-20 14:45
+Surabaya
+Singapore
+David Lee Sarah Wang Michael Chen -
+Y
+2
+242401
+AirAsia
+AA03
+2023-03-10 10:15
+Yogyakarta
+Jakarta
+Emily Tan Daniel Kim Olivia Wong -
+Y
+2
+343501
+Batik Air
+ID04
+2023-04-05 18:00
+Medan
+Kuala Lumpur
+Alex Brown Maria Garcia William Miller -
+Y
+2
+565701
+Citilink
+QG05
+2023-05-12 12:00
+Bandung
+Surabaya
+Sophia Martinez Ethan Wilson Ava Taylor -
+Y
+2
+232402
+Garuda Indonesia
+GA01
+2023-01-16 10:30
+Bali
+Jakarta
+John Jane Doe Bob Smith Alice Johnson -
+Y
+2
+222502
+Lion Air
+JT02
+2023-03-20 16:45
+Singapore
+Surabaya
+David Lee Sarah Wang Michael Chen -
+Y
+2
+232403
+Garuda Indonesia
+GA03
+2023-03-10 10:15
+Yogyakarta
+Jakarta
+Emily Tan Daniel Kim Olivia Wong -
+Y
+2
+565702
+Citi
+Y
+2
+565702
+Citi
+Y
+2
+222503
+Lion Air
+JT06
+2023-06-25 16:30
+Denpasar
+Jakarta
+Liam Jackson Chloe Anderson Ryan Davis -
+Y
+2
+242401
+Y
+
+7
+QG05
+2023-05-12 12:00
+Bandung
+Surabaya
+
+7
+JT06
+2023-06-25 16:30
+Denpasar
+Jakarta
