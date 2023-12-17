@@ -44,7 +44,6 @@ void deleteMaskapaiX(List_parent &L, string M);
 adr_parent findElm(List_parent L, string nama_Maskapai);
 adr_parent createElm(infotype_parent X);
 bool duplicateP(List_parent L, int ID_Maskapai);
-// printInfo(List_parent L,bool kondisi);
 void deletefirstchild(List_parent L,int id);
 
 #endif // PARENT-MASKAPAI_H_INCLUDED

@@ -64,7 +64,7 @@ void insertAsc(List_child &L, adr_child P){
             adr_child Q = L.first;
             bool sudah = false;
             while (Q->next != NULL && !sudah){
-                system_clock::time_point temp_time = system_clock::from_time_t(std::mktime(&P->info.date_time));
+                system_clock::time_point temp_time = system_clock::from_time_t(std::mktime(&Q->info.date_time));
                 if (temp_time > input_time){
                     insertAfter(Q,P);
                     sudah = true;
@@ -78,40 +78,61 @@ void insertAsc(List_child &L, adr_child P){
 void deleteFirst(List_child &L, adr_child &P){
     P = L.first;
     L.first = L.first -> next;
+    P->next = NULL; 
 }
 
 void deleteLast(List_child &L, adr_child &P){
     P = L.last;
     adr_child Q = L.first;
-    while (next(next(Q)) != NULL){
+    while (next(Q) != L.last){
         Q = next(Q);
     }    
     L.last = Q;
-    Q->next == NULL;
+    L.last->next = NULL;
 }
 
 void deleteAfter(adr_child Prec, adr_child &P){
     P = Prec->next;
     Prec->next = P->next;
+    P->next = NULL;
 }
 
-void deletePenerbaganX(List_child &L, string maskapai){
-    adr_child P;
-    adr_child Q = L.first;
-    while (Q != NULL){
-        if (L.first->info.nama_maskapai == maskapai){
-            deleteFirst(L,P);
-        } else if (L.last->info.nama_maskapai == maskapai){
-            deleteLast(L,P);
-        } else if (Q->next->info.nama_maskapai == maskapai){
-            deleteAfter(Q,P);
+void deletePenerbaganX(List_child &L, string jenis, tm jadwal, string asal, string tujuan, adr_child &Z){
+    system_clock::time_point input_time = system_clock::from_time_t(std::mktime(&jadwal));
+    system_clock::time_point time_first = system_clock::from_time_t(std::mktime(&L.first->info.date_time));
+    system_clock::time_point time_last = system_clock::from_time_t(std::mktime(&L.last->info.date_time)); 
+    if (L.first->info.Jenis == jenis && L.first->info.Asal == asal && L.first->info.Tujuan == tujuan && input_time == time_first){
+        deleteFirst(L,Z);
+    } else if (L.last->info.Jenis == jenis && L.last->info.Asal == asal && L.last->info.Tujuan == tujuan && input_time == time_last) {
+        deleteLast(L,Z);
+    } else {
+        cout << "testing1" << endl;
+        adr_child Q = L.first;
+        bool sudah = false;
+        while (Q->next != NULL && !sudah){
+            system_clock::time_point time_temp = system_clock::from_time_t(std::mktime(&Q->next->info.date_time)); 
+            if (Q->next->info.Jenis == jenis && time_temp == input_time && Q->next->info.Asal == asal && Q->next->info.Tujuan == tujuan){
+                deleteAfter(Q,Z);
+                sudah = true;
+            }
+            Q = Q-> next;
         }
-        Q=next(Q);
     }
 }
 
 
-//void printInfo(List_child L);
+void printInfo(List_child L){
+    adr_child Q = L.first;
+        while (Q != NULL){
+            cout << "Jenis Pesawat: "<<Q->info.Jenis << endl;
+            cout << "Waktu Penerbangan: "<< put_time(&Q->info.date_time, "%Y-%m-%d %H:%M:%S")  << endl;
+            cout << "Asal Keberangkatan: "<<Q->info.Asal << endl;
+            cout << "Tujuan Keberangkatan: "<<Q->info.Tujuan << endl;
+            cout << endl;
+            Q = Q-> next;
+        }
+}
+
 bool duplicateC(List_child L, string kode_penerbangan){
     adr_child P = L.first;
     while (P!=NULL){

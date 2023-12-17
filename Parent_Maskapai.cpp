@@ -56,7 +56,4 @@ bool duplicateP(List_parent L, int ID_Maskapai){
     return false;
 }
 
-/*void printInfo(List_parent L,bool kondisi){
-
-} */
 //
