@@ -11,5 +11,6 @@ int jmlhchild(adr_parent P);
 void deleteall(adr_parent &maskapai);
 void delete_x(adr_parent &maskapai, string jenis ,tm jadwal, string asal, string tujuan);
 void printInfo(List_parent L,bool kondisi);
+void dlteallPenerbagan(List_child &L, string maskapai);
 
 #endif // RELASIORFITUR_H_INCLUDED

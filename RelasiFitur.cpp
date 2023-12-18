@@ -114,3 +114,24 @@ void delete_x(adr_parent &maskapai, string jenis , tm jadwal, string asal, strin
         q->nextPenerbangan = NULL;
     }
 }
+
+void dlteallPenerbagan(List_child &L, string maskapai){
+    adr_child Z = NULL;
+    if (L.first->info.nama_maskapai == maskapai){
+        deleteFirst(L,Z);
+    } else if (L.last->info.nama_maskapai == maskapai) {
+        deleteLast(L,Z);
+    } else {
+        cout << "testing1" << endl;
+        adr_child Q = L.first;
+        bool sudah = false;
+        while (Q->next != NULL && !sudah){
+            if (Q->next->info.nama_maskapai == maskapai){
+                deleteAfter(Q,Z);
+                sudah = true;
+            }
+            Q = Q-> next;
+        }
+    }
+    Z = NULL;
+}

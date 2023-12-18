@@ -175,7 +175,7 @@ int main(){
             break;
             case '4':{
                 cout << "\033[2J\033[1;1H";
-                cout << "=== Mencari Data Maskapai berserta jumlah penerbangan ===" << endl;
+                cout << "=== Mencari Maskapai berserta jumlah penerbangan dari maskapai ===" << endl;
                 string namamaskapai;
                 int jumlahpenerbangan;
                 cout << "Masukkan Nama Maskapai: ";
@@ -266,6 +266,36 @@ int main(){
             case '8':{
                 cout << "\033[2J\033[1;1H";
                 cout << "================ Menghapus Data Maskapai ================" << endl;
+                string namamaskapai;
+                cout << "Masukkan Nama Maskapai: ";
+                getline(cin, namamaskapai);
+                getline(cin, namamaskapai);
+                adr_parent P = findElm(data_maskapai,namamaskapai);
+                if (P != NULL){
+                    int jumlahpenerbangan = jmlhchild(P);
+                    if (jumlahpenerbangan > 0){
+                        for (int i = 0; i < jumlahpenerbangan; i++){
+                            dlteallPenerbagan(data_penerbangan,namamaskapai);
+                        }
+                        adr_parent Q = findElm(data_maskapai, namamaskapai);
+                        deleteMaskapaiX(data_maskapai,Q);
+                        cout << "Maskapai berhasil dihapus" << endl; 
+                    } else {
+                        adr_parent Q = findElm(data_maskapai, namamaskapai);
+                        deleteMaskapaiX(data_maskapai,Q);
+                        cout << "Maskapai berhasil dihapus" << endl; 
+                    }
+                } else {
+                    cout << "Masakapai tidak ditemukan" << endl;
+                }
+                cout << endl;
+                cout << "Back to main menu? [Y/N]: ";
+                cin >> selection;
+                if (selection == 'Y'){
+                    cout << "\033[2J\033[1;1H";
+                } else {
+                    selection = 0;
+                }
             }
             break;
             case '9':{

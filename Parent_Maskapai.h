@@ -38,12 +38,11 @@ void createList(List_parent &L);
 void insertLast(List_parent &L, adr_parent P);
 void deleteFirst(List_parent &L, adr_parent &P);
 void deleteLast(List_parent &L, adr_parent &P);
-void deleteAfter(List_parent &L, adr_parent Prec, adr_parent &P);
-void deleteMaskapaiX(List_parent &L, string M);
+void deleteAfter(adr_parent Prec, adr_parent &P);
+void deleteMaskapaiX(List_parent &L, adr_parent P);
 
 adr_parent findElm(List_parent L, string nama_Maskapai);
 adr_parent createElm(infotype_parent X);
 bool duplicateP(List_parent L, int ID_Maskapai);
-void deletefirstchild(List_parent L,int id);
 
 #endif // PARENT-MASKAPAI_H_INCLUDED

@@ -28,11 +28,37 @@ void insertLast(List_parent &L, adr_parent P){
 void deleteFirst(List_parent &L, adr_parent &P){
     P = L.first;
     L.first = L.first->next;
+    P->next = NULL; 
 }
+
 void deleteLast(List_parent &L, adr_parent &P){
-    
+    adr_parent Q = L.first;
+    while (next(Q) != NULL){
+        Q = next(Q);
+    }
+    P = Q->next;
+    Q->next = NULL;
 }
-//void deleteAfter(List_parent &L, adr_parent Prec, adr_parent &P)
+
+void deleteAfter(adr_parent Prec, adr_parent &P){
+    P = Prec->next;
+    Prec->next = P->next;
+    P->next = NULL;
+}
+
+void deleteMaskapaiX(List_parent &L, adr_parent P){
+    adr_parent Q = L.first;
+    adr_parent Z = NULL;
+    if (Q == P){
+        deleteFirst(L, Z);
+    }else{
+        while (Q->next != P){
+            Q = Q->next;
+        }
+        deleteAfter(Q,P);
+    }
+    delete P;
+}
 
 adr_parent findElm(List_parent L, string nama_Maskapai){
     adr_parent P = L.first;
