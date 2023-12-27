@@ -9,12 +9,9 @@ adr_relasi addrelasi(adr_child penerbangan){
 
 void insertrelasi(adr_parent &P, adr_child Q){
     adr_relasi Z = addrelasi(Q);
-    cout << "apa1"<< endl;
     if (P->child == NULL) {
-        cout << "apa2"<< endl;
            P->child = Z;
         } else {
-            cout << "apa3"<< endl;
             adr_relasi Y = P->child;
             while (Y -> next != NULL){
                 Y = Y->next;
@@ -81,17 +78,6 @@ void printInfo(List_parent L, bool kondisi){
         cout << endl;
     }
 }
-// void deleteall_relasi(adr_parent &maskapai){
-//     adr_relasi p;
-//     while (maskapai.child != NULL) {
-//         p = maskapai.child;
-//         while (p->next != NULL) {
-//             p = p->next;
-//         }
-//         p->next->Penerbangan = NULL;
-//         p->next = NULL;
-//     }
-// }
 
 void delete_x(adr_parent &maskapai, string jenis , tm jadwal, string asal, string tujuan){
     adr_relasi p,q;
@@ -122,7 +108,6 @@ void dlteallPenerbagan(List_child &L, string maskapai){
     } else if (L.last->info.nama_maskapai == maskapai) {
         deleteLast(L,Z);
     } else {
-        cout << "testing1" << endl;
         adr_child Q = L.first;
         bool sudah = false;
         while (Q->next != NULL && !sudah){

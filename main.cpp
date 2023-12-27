@@ -44,21 +44,13 @@ int main(){
                 cin >> datasubmaskapai.Id_Maskapai;
                 if (!duplicateP(data_maskapai,datasubmaskapai.Id_Maskapai)){
                     cout << "Masukkan Nama Maskapai: ";
-                    // string str;
-                    // getline(cin,str);
                     getline(cin,datasubmaskapai.Nama_Masakapai);
                     getline(cin,datasubmaskapai.Nama_Masakapai);
-                    //str = datasubmaskapai.Nama_Masakapai;
                     cout << "Masukkan Alamat Maskapai: ";
                     getline(cin,datasubmaskapai.Alamat_Maskapai);
                     cout << "Masukkan No.Telp Maskapai: ";
                     cin >>  datasubmaskapai.Telp_maskapai;
                     P = createElm(datasubmaskapai);
-                    if (P->child == NULL){
-                        cout << "sadasdsada" << endl;
-                    } else {
-                        cout << P->child << endl;
-                    }
                     cout << P->info.Nama_Masakapai << endl;
                     cout << P->info.Id_Maskapai << endl;
                     cout << P->info.Alamat_Maskapai << endl;
@@ -111,13 +103,9 @@ int main(){
                                 i = 999;
                             }
                         }
-                        cout << "apaiya"<< endl;
                         C = createElm(datapenerbangan);
-                        cout << "apaiya1"<< endl;
                         insertAsc(data_penerbangan,C);
-                        cout << "apaiya2"<< endl;
                         insertrelasi(cariMask,C);
-                        cout << "apaiya3"<< endl;
                         cout << "\nData Berhasil ditambah!!! \n";
                     } else {
                      cout << "Tidak ada penerbangan dengan maskapai "<< datapenerbangan.nama_maskapai << "\n";
@@ -245,7 +233,6 @@ int main(){
                 getline(cin,subpenerbangan.Tujuan);
                 adr_child P = NULL;
                 deletePenerbaganX(data_penerbangan,subpenerbangan.Jenis,subpenerbangan.date_time,subpenerbangan.Asal,subpenerbangan.Tujuan,P);
-                cout << "testing" << endl;
                 if (P == NULL){
                     cout << "Jadwal Penerbangan tidak ditemukan" << endl;
                 } else {

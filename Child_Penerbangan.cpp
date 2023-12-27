@@ -39,28 +39,16 @@ void insertAfter(adr_child Prec, adr_child P){
 
 void insertAsc(List_child &L, adr_child P){
     system_clock::time_point input_time = system_clock::from_time_t(std::mktime(&P->info.date_time));
-    // if (L.first != NULL){
-    //     system_clock::time_point time_first = system_clock::from_time_t(std::mktime(&L.first->info.date_time));
-    //     system_clock::time_point time_last = system_clock::from_time_t(std::mktime(&L.last->info.date_time));  
-    // }
-    cout << "ZZZZZZZZ" << endl;
     if (L.first == NULL){
-        cout << "asdasdasdsa000" << endl;
         insertFirst(L,P);
     } else {  
-        cout << "inidia1" << endl;
         system_clock::time_point time_first = system_clock::from_time_t(std::mktime(&L.first->info.date_time));
-        cout << "inidia2" << endl;
         system_clock::time_point time_last = system_clock::from_time_t(std::mktime(&L.last->info.date_time)); 
-        cout << "inidia3" << endl;
         if (input_time < time_first){
-            cout << "asdasdasdsa00" << endl;
             insertFirst(L,P);
         } else if (input_time > time_last){
-            cout << "asdasdasdsa0" << endl;
             insertLast(L,P);
         } else {
-            cout << "asdasdasdsa0" << endl;
             adr_child Q = L.first;
             bool sudah = false;
             while (Q->next != NULL && !sudah){
@@ -106,7 +94,6 @@ void deletePenerbaganX(List_child &L, string jenis, tm jadwal, string asal, stri
     } else if (L.last->info.Jenis == jenis && L.last->info.Asal == asal && L.last->info.Tujuan == tujuan && input_time == time_last) {
         deleteLast(L,Z);
     } else {
-        cout << "testing1" << endl;
         adr_child Q = L.first;
         bool sudah = false;
         while (Q->next != NULL && !sudah){
@@ -143,4 +130,3 @@ bool duplicateC(List_child L, string kode_penerbangan){
     }
     return false;
 }
-adr_child findchild(List_child L, string Kode);

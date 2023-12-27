@@ -1,6 +1,7 @@
 #ifndef PARENT_MASKAPAI_H_INCLUDED
 #define PARENT_MASKAPAI_H_INCLUDED
 #include <iostream>
+#include "Child_Penerbangan.h"
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info

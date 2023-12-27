@@ -81,5 +81,3 @@ bool duplicateP(List_parent L, int ID_Maskapai){
     }
     return false;
 }
-
-//
